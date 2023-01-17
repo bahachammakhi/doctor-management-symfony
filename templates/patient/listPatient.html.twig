@@ -1,0 +1,19 @@
+<h1>Liste des patients</h1>
+<table border="1">
+    <tr>
+        <td>Id</td>
+        <td>Name</td>
+        <td>email</td>
+        <td>age</td>
+    </tr>
+    {%  for p in patientList %}
+        <tr>
+            <td>{{ p.id }}</td>
+            <td>{{ p.name}}</td>
+            <td>{{ p.email }}</td>
+            <td>{{ p.age }}</td>
+            <td><a href="{{ path("delete-patient", {'id': p.id}) }}">Supprimer</a></td>
+            <td><a href="{{ path("update-patient", {'id': p.id}) }}">MAJ</a></td>
+        </tr>
+    {% endfor %}
+</table>
