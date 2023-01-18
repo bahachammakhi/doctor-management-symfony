@@ -1,7 +1,17 @@
-<h1>MAJ d'un patient</h1>
+{% extends 'base.html.twig' %}
+
+{% block title %}Update Patient!{% endblock %}
+
+
+{% block body %}
+<div class="h-100 d-flex align-items-center justify-content-center">
+<div class="m-4 w-50">
+<h1>Update patient id:{{ patient.id}} /{{ patient.name}}</h1>
 
 <form action="" method="Post">
     {{ form_widget(editFormPatient) }}
     <input type="submit" value="MAJ Patient">
 </form>
-
+<div>
+</div>
+{% endblock %}

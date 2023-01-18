@@ -25,7 +25,7 @@ class PatientForm extends AbstractType
             ->add('genre', TextType::class)
         ->add('doctor', EntityType::class,
         ['class'=>'App\Entity\User',
-            'choice_label'=>'email',
+            'choice_label'=>'name',
             'multiple'=>false,
             'expanded'=>false])
         ;

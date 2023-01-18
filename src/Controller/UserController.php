@@ -15,7 +15,7 @@ use Psr\Log\LoggerInterface;
 class UserController extends AbstractController
 {
 
-    #[Route('/user', name: 'app_user')]
+    #[Route('/signup', name: 'app_user')]
     public function index(ManagerRegistry $doctrine,Request $request,UserPasswordHasherInterface $passwordHasher): Response
     {
         $user = new User();

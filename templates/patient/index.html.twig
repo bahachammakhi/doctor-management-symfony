@@ -9,12 +9,12 @@
 </style>
 
 <div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+    <h1>Hello {{ app.user.name }}! ✅</h1>
 
-    This friendly message is coming from:
+    Features of the application:
     <ul>
-        <li>Your controller at <code><a href="{{ '/Users/mac/work/personal/tek-up/doctor-management/src/Controller/PatientController.php'|file_link(0) }}">src/Controller/PatientController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/Users/mac/work/personal/tek-up/doctor-management/templates/patient/index.html.twig'|file_link(0) }}">templates/patient/index.html.twig</a></code></li>
+        <li>Add patient <code><a href="{{ path('add-patients') }}">Add patient</a></code></li>
+        <li>Patient list <code><a href="{{ path('list_patients') }}">Patient list</a></code></li>
     </ul>
 </div>
 {% endblock %}

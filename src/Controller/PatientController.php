@@ -21,7 +21,7 @@ class PatientController extends AbstractController
         ]);
     }
 
-    #[Route('/patients', name: 'list_patients')]
+    #[Route('/patient/patients', name: 'list_patients')]
     public function listPatients(ManagerRegistry $doctrine): Response
     {
         $em= $doctrine->getManager();
@@ -32,7 +32,7 @@ class PatientController extends AbstractController
         ]);
     }
 
-    #[Route('/addPatient', name: 'add-patients')]
+    #[Route('/patient/addPatient', name: 'add-patients')]
     public function addPatient(ManagerRegistry $doctrine,Request $request): Response
     {
         $patient = new Patient();
@@ -54,7 +54,7 @@ class PatientController extends AbstractController
     }
 
 
-    #[Route('/deletePatient/{id}', name: 'delete-patient')]
+    #[Route('/patient/deletePatient/{id}', name: 'delete-patient')]
     public function deletePatient($id,ManagerRegistry $doctrine,): Response
     {
         $em= $doctrine->getManager();
@@ -72,7 +72,7 @@ class PatientController extends AbstractController
         return $this->redirectToRoute('list_patients');
     }
 
-    #[Route('/updatePatient/{id}', name: 'update-patient')]
+    #[Route('/patient/updatePatient/{id}', name: 'update-patient')]
     public function updatePatient(ManagerRegistry $doctrine,Request $request, $id): Response
     {
 
@@ -92,7 +92,8 @@ class PatientController extends AbstractController
         }
 
         return $this->render('patient/updatePatient.html.twig', [
-            'editFormPatient'=>$editform->createView()
+            'editFormPatient'=>$editform->createView(),
+            'patient'=>$patient
         ]);
     }
 }
