@@ -32,7 +32,7 @@ class PatientController extends AbstractController
         ]);
     }
 
-    #[Route('symfony', name: 'add-patients')]
+    #[Route('/patient/addPatient', name: 'add-patients')]
     public function addPatient(ManagerRegistry $doctrine,Request $request): Response
     {
         $patient = new Patient();
