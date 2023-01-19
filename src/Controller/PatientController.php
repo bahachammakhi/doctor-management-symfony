@@ -49,7 +49,7 @@ class PatientController extends AbstractController
         }
 
         return $this->render('patient/addPatient.html.twig', [
-        'formPatient'=>$form->createView()
+            'formPatient'=>$form->createView()
         ]);
     }
 

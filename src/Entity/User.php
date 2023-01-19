@@ -42,10 +42,37 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\OneToMany(mappedBy: 'doctor', targetEntity: Patient::class, orphanRemoval: true)]
     private Collection $patients;
 
+
+    #[ORM\OneToMany(targetEntity: Consultation::class, mappedBy: 'doctor')]
+    private Collection $consultations;
+
     public function __construct()
     {
         $this->patients = new ArrayCollection();
+        $this->consultations = new ArrayCollection();
     }
+
+    /**
+     * @return Collection
+     */
+    public function getConsultations(): Collection
+    {
+        return $this->consultations;
+    }
+
+    /**
+     * @param Collection $consultations
+     */
+    public function setConsultations(Collection $consultations): void
+    {
+        $this->consultations = $consultations;
+    }
+
+
+
+
+
+
 
     public function getId(): ?int
     {

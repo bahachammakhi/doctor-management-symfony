@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Consultation list!{% endblock %}
+
+{% block body %}
+<div class="m-4">
+<h1>Consultation list</h1>
+<table border="1" class="table table">
+    <tr>
+        <td class="table-primary">Id</td>
+        <td class="table-primary">patient name</td>
+        <td class="table-primary">doctor name</td>
+        <td class="table-primary">date </td>
+        <td class="table-primary">update</td>
+        <td class="table-primary">delete </td>
+
+    </tr>
+    {%  for p in consultationList %}
+        <tr>
+            <td>{{ p.id }}</td>
+            <td>{{ p.patient.name}}</td>
+            <td>{{ p.doctor.name}}</td>
+            <td>{{ p.dateConsultation |date }}</td>
+            <td><a href="{{ path("update-consultation", {'id': p.id}) }}">Update</a></td>
+            <td><a href="{{ path("delete-consultation", {'id': p.id}) }}">Delete</a></td>
+        </tr>
+    {% endfor %}
+</table>
+</div>
+{% endblock %}

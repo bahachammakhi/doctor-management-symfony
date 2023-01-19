@@ -27,6 +27,10 @@ class Patient
     #[ORM\JoinColumn(nullable: false)]
     private ?User $doctor = null;
 
+
+
+
+
     #[ORM\Column(type: Types::DATE_MUTABLE, nullable: true)]
     private ?\DateTimeInterface $created_at = null;
 

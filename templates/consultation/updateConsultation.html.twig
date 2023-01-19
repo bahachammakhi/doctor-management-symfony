@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Update Consultation!{% endblock %}
+
+
+{% block body %}
+<div class="h-100 d-flex align-items-center justify-content-center">
+<div class="m-4 w-50">
+<h1>Update consultation id:{{ consultation.id}} /{{ consultation.id}}</h1>
+
+<form action="" method="Post">
+    {{ form_widget(editFormConsultation) }}
+    <input type="submit" value="MAJ Consultation">
+</form>
+<div>
+</div>
+{% endblock %}
