@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ordonnance list!{% endblock %}
+
+{% block body %}
+    <div class="m-4">
+        <h1>Ordonnance list</h1>
+        <table border="1" class="table table">
+            <tr>
+                <td class="table-primary">Id</td>
+                <td class="table-primary">Medicament</td>
+                <td class="table-primary">Date</td>
+                <td class="table-primary">Update</td>
+                <td class="table-primary">Delete</td>
+
+            </tr>
+            {%  for o in ordonnanceList %}
+                <tr>
+                    <td>{{ o.id }}</td>
+                    <td>{{ o.Medicament}}</td>
+                    <td>{{ o.Date |date }}</td>
+                    <td><a href="{{ path("update-ordonnance", {'id': o.id}) }}">Update</a></td>
+                    <td><a href="{{ path("delete-ordonnance", {'id': o.id}) }}">Delete</a></td>
+
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+{% endblock %}

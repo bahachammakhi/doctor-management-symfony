@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Add Ordonnance!{% endblock %}
+
+{% block body %}
+    <div class="h-100 d-flex align-items-center justify-content-center">
+    <div class="m-4 w-50">
+
+    <h1>Create a new ordonnance</h1>
+
+    <form action="" method="Post">
+        {{ form_widget(formOrdonnance) }}
+        <input type="submit" class="btn btn-primary btn-block mb-4" value="Add Ordonnance">
+    </form>
+    <div>
+    </div>
+{% endblock %}
