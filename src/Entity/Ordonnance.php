@@ -17,17 +17,12 @@ class Ordonnance
     #[ORM\Column(length: 255)]
     private ?string $Medicament = null;
 
-    #[ORM\Column(type: Types::DATE_MUTABLE, nullable: true)]
-    private ?\Date $Date = null;
-
+    #[ORM\Column(length: 255)]
+    private ?string $description = null;
 
     #[ORM\OneToOne(targetEntity: Consultation::class)]
     #[ORM\JoinColumn(nullable: false)]
-    private $consulatation;
-
-    #[ORM\OneToOne(targetEntity: Patient::class)]
-    #[ORM\JoinColumn(nullable: false)]
-    private $patient;
+    private $consultation;
 
     public function getId(): ?int
     {
@@ -46,43 +41,32 @@ class Ordonnance
         return $this;
     }
 
-    public function getDate(): ?string
+    public function getDescription(): ?string
     {
-        return $this->Date;
+        return $this->description;
     }
 
-    public function setDate(string $Date): self
+    public function setDescription(string $description): self
     {
-        $this->Date = $Date;
+        $this->description = $description;
 
         return $this;
     }
 
-    public function getPatient(): ?string
-    {
-        return $this->patient;
-    }
-
-    public function setPatient(string $patient): self
-    {
-        $this->patient = $patient;
-
-        return $this;
-    }
 
     /**
      * @return mixed
      */
-    public function getConsulatation()
+    public function getConsultation()
     {
-        return $this->consulatation;
+        return $this->consultation;
     }
 
     /**
-     * @param mixed $consulatation
+     * @param mixed $consultation
      */
-    public function setConsulatation($consulatation): void
+    public function setConsultation($consultation): void
     {
-        $this->consulatation = $consulatation;
+        $this->consultation = $consultation;
     }
 }

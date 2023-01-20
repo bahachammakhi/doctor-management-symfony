@@ -3,6 +3,8 @@
 namespace App\Controller;
 
 
+use App\Entity\Patient;
+use App\Form\PatientForm;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -14,7 +16,7 @@ class PatientController extends AbstractController
 {
 
 
-    #[Route('/patient', name: 'app_patient')]
+    #[Route('/', name: 'app_patient')]
     public function index(): Response
     {
         return $this->render('patient/index.html.twig', [

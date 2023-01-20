@@ -14,10 +14,8 @@ class Consultation
     #[ORM\Column]
     private ?int $id = null;
 
-
-
-    #[ORM\Column(type: Types::DATE_MUTABLE)]
-    public ?\DateTimeInterface $dateConsultation = null;
+    #[ORM\Column(length: 255)]
+    public ?string $dateConsultation = null;
 
     #[ORM\ManyToOne(targetEntity: Patient::class, inversedBy: 'consultations')]
     #[ORM\JoinColumn(nullable: false)]
@@ -70,12 +68,12 @@ class Consultation
         return $this->id;
     }
 
-    public function getDateConsultation(): ?\DateTimeInterface
+    public function getDateConsultation(): ?String
     {
         return $this->dateConsultation;
     }
 
-    public function setDateConsultation(\DateTimeInterface $dateConsultation): self
+    public function setDateConsultation(String $dateConsultation): self
     {
         $this->dateConsultation = $dateConsultation;
 

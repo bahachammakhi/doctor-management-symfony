@@ -9,6 +9,7 @@ use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 
 class ConsultationForm extends AbstractType
@@ -26,7 +27,7 @@ class ConsultationForm extends AbstractType
                     'choice_label'=>'name',
                     'multiple'=>false,
                     'expanded'=>false])
-            ->add('dateConsultation', DateType::class)
+            ->add('dateConsultation', TextType::class)
         ;
     }
 
