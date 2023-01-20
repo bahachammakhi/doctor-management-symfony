@@ -6,8 +6,191 @@
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
         {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
         {% block stylesheets %}
+<style>
+body {
+  background-color: #FFFFFF
+}
+      /*===== FOOTER ONE =====*/
+.footer-one {
+  background-color: #f5f5f5;
+}
+.footer-one .footer-logo {
+  margin-top: 30px;
+}
+.footer-one .footer-widget {
+  padding-top: 70px;
+  padding-bottom: 100px;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .footer-one .footer-widget {
+    padding-top: 40px;
+    padding-bottom: 70px;
+  }
+}
+@media (max-width: 767px) {
+  .footer-one .footer-widget {
+    padding-top: 20px;
+    padding-bottom: 50px;
+  }
+}
+.footer-one .footer-title {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 22px;
+  color: var(--black);
+  position: relative;
+}
+.footer-one .footer-app-store {
+  padding-top: 22px;
+}
+.footer-one .footer-app-store .download-title {
+  font-size: 15px;
+  display: block;
+  margin-bottom: 15px;
+  font-weight: 500;
+  color: var(--dark-1);
+}
+.footer-one .footer-app-store li {
+  display: inline-block;
+  margin-right: 8px;
+}
+.footer-one .footer-app-store li img {
+  max-width: 140px;
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .footer-one .footer-app-store li {
+    margin-right: 6px;
+  }
+}
+.footer-one .footer-app-store li:last-child {
+  margin-right: 0;
+}
+@media (max-width: 767px) {
+  .footer-one .footer-app-store li {
+    width: 120px;
+    display: block;
+    margin-bottom: 10px;
+  }
+  .footer-one .footer-app-store li:last-child {
+    margin: 0;
+  }
+}
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .footer-one .footer-app-store li {
+    width: auto;
+  }
+}
+.footer-one .footer-app-store li a {
+  -webkit-transition: all 0.2s ease-out 0s;
+  -moz-transition: all 0.2s ease-out 0s;
+  -ms-transition: all 0.2s ease-out 0s;
+  -o-transition: all 0.2s ease-out 0s;
+  transition: all 0.2s ease-out 0s;
+}
+.footer-one .footer-app-store li a:hover {
+  box-shadow: var(--shadow-4);
+  -webkit-transform: translateY(-4px);
+  -moz-transform: translateY(-4px);
+  -ms-transform: translateY(-4px);
+  -o-transform: translateY(-4px);
+  transform: translateY(-4px);
+}
+.footer-one .f-about {
+  margin-top: 30;
+}
+.footer-one .f-about .text {
+  margin-top: 20px;
+}
+@media only screen and (min-width: 1200px) and (max-width: 1399px), only screen and (min-width: 1400px) {
+  .footer-one .f-about {
+    padding-right: 200px;
+  }
+}
+.footer-one .footer-link {
+  margin-top: 30px;
+}
+.footer-one .footer-link ul {
+  margin-top: 8px;
+}
+.footer-one .footer-link ul a {
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--dark-3);
+  margin-top: 16px;
+  font-weight: 400;
+  -webkit-transition: all 0.3s ease-out 0s;
+  -moz-transition: all 0.3s ease-out 0s;
+  -ms-transition: all 0.3s ease-out 0s;
+  -o-transition: all 0.3s ease-out 0s;
+  transition: all 0.3s ease-out 0s;
+}
+@media (max-width: 767px) {
+  .footer-one .footer-link ul a {
+    margin-top: 12px;
+  }
+}
+.footer-one .footer-link ul a:hover {
+  color: var(--primary);
+}
+.footer-one .footer-contact {
+  margin-top: 30px;
+}
+.footer-one .footer-contact ul {
+  margin-top: 24px;
+}
+.footer-one .footer-contact ul li {
+  display: block;
+  margin-top: 15px;
+  position: relative;
+  padding-left: 24px;
+  color: var(--dark-3);
+}
+.footer-one .footer-contact ul li:first-child {
+  margin: 0;
+}
+.footer-one .footer-contact ul li i {
+  font-size: 18px;
+  position: absolute;
+  left: 0;
+  top: 4px;
+}
+.footer-one .footer-copyright {
+  border-top: 1px solid var(--gray-4);
+}
+.footer-one .copyright {
+  padding-bottom: 23px;
+  padding-top: 13px;
+}
+.footer-one .copyright .text {
+  color: var(--dark-3);
+  margin-top: 10px;
+}
+.footer-one .social {
+  margin-top: 10px;
+}
+.footer-one .social li {
+  display: inline-block;
+  margin-right: 15px;
+}
+.footer-one .social li:last-child {
+  margin-right: 0;
+}
+.footer-one .social li a {
+  font-size: 18px;
+  color: var(--dark-3);
+  -webkit-transition: all 0.3s ease-out 0s;
+  -moz-transition: all 0.3s ease-out 0s;
+  -ms-transition: all 0.3s ease-out 0s;
+  -o-transition: all 0.3s ease-out 0s;
+  transition: all 0.3s ease-out 0s;
+}
+.footer-one .social li a:hover {
+  color: var(--primary);
+}
+</style>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
             {{ encore_entry_link_tags('app') }}
+
         {% endblock %}
 
         {% block javascripts %}
@@ -18,7 +201,7 @@
     <body>
     <nav class="navbar navbar-dark bg-dark p-4">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" href="{{ path('app_patient') }}">
       <img src="https://cdn.pixabay.com/photo/2017/05/15/21/58/drug-icon-2316244_960_720.png" alt="" width="30" height="24" class="d-inline-block align-text-top">
       Doctor management
     </a>
@@ -45,4 +228,101 @@
        <main class=" container d-flex flex-column h-100"> {% block body %}{% endblock %}</main>
 
     </body>
+
+<!--====== FOOTER ONE PART START ======-->
+<footer class="footer-area footer-one">
+   <div class="footer-widget">
+      <div class="container">
+         <div class="row">
+            <div class="col-xl-6 col-lg-4 col-sm-12">
+               <div class="f-about">
+                  <div class="footer-logo">
+                     <a href="javascript:void(0)">
+                     <img src="data:image/png;base64,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" alt="Logo" />
+                     </a>
+                  </div>
+                  <p class="text">
+                     Web application for doctor management
+                  </p>
+               </div>
+
+            </div>
+            <div class="col-xl-2 col-lg-3 col-sm-4">
+               <div class="footer-link">
+                  <h6 class="footer-title">Services</h6>
+                  <ul>
+                     <li><a href="javascript:void(0)">Patients</a></li>
+                     <li><a href="javascript:void(0)">Consultations</a></li>
+
+                  </ul>
+               </div>
+               <!-- footer link -->
+            </div>
+            <div class="col-xl-2 col-lg-3 col-sm-4">
+               <!-- Start Footer Contact -->
+               <div class="footer-contact">
+                  <h6 class="footer-title">Help & Suuport</h6>
+                  <ul>
+                     <li>
+                        <i class="lni lni-map-marker"></i>Tekup, Tunis
+                     </li>
+                     <li><i class="lni lni-phone-set"></i> +88 556 88545</li>
+                     <li><i class="lni lni-envelope"></i> support@tekup.com</li>
+                  </ul>
+               </div>
+               <!-- End Footer Contact -->
+            </div>
+         </div>
+         <!-- row -->
+      </div>
+      <!-- container -->
+   </div>
+   <!-- footer widget -->
+   <div class="footer-copyright">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-12">
+               <div
+                  class="
+                  copyright
+                  text-center
+                  d-md-flex
+                  justify-content-between
+                  align-items-center
+                  "
+                  >
+                  <p class="text">Copyright © 2023 Baha, Aziz, fakhri , Aymen. All Rights Reserved</p>
+                  <ul class="social">
+                     <li>
+                        <a href="javascript:void(0)">
+                        <i class="lni lni-facebook-filled"></i>
+                        </a>
+                     </li>
+                     <li>
+                        <a href="javascript:void(0)">
+                        <i class="lni lni-twitter-original"></i>
+                        </a>
+                     </li>
+                     <li>
+                        <a href="javascript:void(0)">
+                        <i class="lni lni-instagram-filled"></i>
+                        </a>
+                     </li>
+                     <li>
+                        <a href="javascript:void(0)"
+                           ><i class="lni lni-linkedin-original"></i
+                           ></a>
+                     </li>
+                  </ul>
+               </div>
+               <!-- copyright -->
+            </div>
+         </div>
+         <!-- row -->
+      </div>
+      <!-- container -->
+   </div>
+   <!-- footer copyright -->
+</footer>
+<!--====== FOOTER ONE PART ENDS ======-->
 </html>

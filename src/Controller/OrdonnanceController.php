@@ -37,16 +37,19 @@ class OrdonnanceController extends AbstractController
         ]);
     }
 
-    #[Route('/ordonnance/addOrdonnance', name: 'add-ordonnance')]
-    public function addOrdonnance(ManagerRegistry $doctrine,Request $request): Response
+    #[Route('/ordonnance/addOrdonnance/{id}', name: 'add-ordonnance')]
+    public function addOrdonnance(ManagerRegistry $doctrine,Request $request,$id): Response
     {
+        $em= $doctrine->getManager();
+        $consultation = $em->getRepository("App\Entity\Consultation")->find($id);
         $ordonnace = new Ordonnance();
         $form = $this->createForm(OrdonnanceForm::class, $ordonnace);
 
         $form->handleRequest($request);
 
         if($form->isSubmitted() and $form->isValid()){
-            $em= $doctrine->getManager();
+            $ordonnace->setConsultation($consultation);
+
             $em->persist($ordonnace);
             $em->flush();
 

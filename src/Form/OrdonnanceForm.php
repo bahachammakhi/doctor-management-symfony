@@ -12,11 +12,11 @@ class OrdonnanceForm extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options){
         $builder->add('Medicament', TextType::class)
         ->add('description', TextareaType::class)
-            ->add('consultation', EntityType::class,
-                    ['class'=>'App\Entity\Consultation',
-                        'choice_label'=>'dateConsultation',
-                        'multiple'=>false,
-                        'expanded'=>false])
+            // ->add('consultation', EntityType::class,
+            //         ['class'=>'App\Entity\Consultation',
+            //             'choice_label'=>'dateConsultation',
+            //             'multiple'=>false,
+            //             'expanded'=>false])
 
         ;
     }

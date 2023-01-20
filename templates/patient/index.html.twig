@@ -6,19 +6,142 @@
 <style>
     .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+    /*===========================
+  card-01 css
+===========================*/
+.single-card {
+  box-shadow: var(--shadow-1);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: 30px;
+  -webkit-transition: all 0.3s ease-out 0s;
+  -moz-transition: all 0.3s ease-out 0s;
+  -ms-transition: all 0.3s ease-out 0s;
+  -o-transition: all 0.3s ease-out 0s;
+  transition: all 0.3s ease-out 0s;
+}
+.single-card:hover {
+  box-shadow: var(--shadow-4);
+}
+.single-card .card-image img {
+  width: 100%;
+  height: 100%;
+}
+.single-card .card-content {
+  padding: 16px;
+}
+.single-card .card-content .card-title {
+  margin-bottom: 0;
+}
+.single-card .card-content .card-title a {
+  color: var(--black);
+  -webkit-transition: all 0.3s ease-out 0s;
+  -moz-transition: all 0.3s ease-out 0s;
+  -ms-transition: all 0.3s ease-out 0s;
+  -o-transition: all 0.3s ease-out 0s;
+  transition: all 0.3s ease-out 0s;
+}
+.single-card .card-content .card-title a:hover {
+  color: var(--primary);
+}
+.single-card .card-content .text {
+  color: var(--dark-3);
+  margin-top: 8px;
+}
 </style>
 
 <div class="example-wrapper">
-    <h1>Hello {{ app.user.name }}! ✅</h1>
+    <h1>Bonjour docteur {{ app.user.name }}! ✅</h1>
+<div class="row">
+        <div class="col-xl-3 col-sm-6 col-12 mb-4">
+          <div class="card">
+            <div class="card-body">
+              <div class="d-flex justify-content-between px-md-1">
+                <div class="align-self-center">
+                  <i class="far fa-comment-alt text-warning fa-3x"></i>
+                </div>
+                <div class="text-end">
+                  <h3>{{patientsNumber}}</h3>
+                  <p class="mb-0">Nombres des patients</p>
+                </div>
 
-    Features of the application:
-    <ul>
-        <li>Add patient <code><a href="{{ path('add-patients') }}">Add patient</a></code></li>
-        <li>Patient list <code><a href="{{ path('list_patients') }}">Patient list</a></code></li>
-        <li>Add consultation <code><a href="{{ path('add-consultations') }}">Add Consultation</a></code></li>
-        <li>Consultation list <code><a href="{{ path('list_consultations') }}">Consultation list</a></code></li>
-                    <li>Add ordonnance <code><a href="{{ path('add-ordonnance') }}">Add Ordonnance</a></code></li>
-            <li>Ordonnance list <code><a href="{{ path('list_ordonnance') }}">Ordonnance list</a></code></li>
-    </ul>
+              </div>
+            </div>
+          </div>
+
+          </div>
+
+        <div class="col-xl-3 col-sm-6 col-12 mb-4">
+        <div class="card">
+            <div class="card-body">
+              <div class="d-flex justify-content-between px-md-1">
+                <div class="align-self-center">
+                  <i class="far fa-comment-alt text-warning fa-3x"></i>
+                </div>
+                <div class="text-end">
+                  <h3>{{consultationsNumber}}</h3>
+                  <p class="mb-0">Nombres des consultations</p>
+                </div>
+
+              </div>
+            </div>
+        </div>
+        </div>
+         <div class="col-xl-3 col-sm-6 col-12 mb-4">
+        <div class="card">
+            <div class="card-body">
+              <div class="d-flex justify-content-between px-md-1">
+                <div class="align-self-center">
+                  <i class="far fa-comment-alt text-warning fa-3x"></i>
+                </div>
+                <div class="text-end">
+                  <h3>{{ordonancesNumber}}</h3>
+                  <p class="mb-0">Nombre des Ordonnances</p>
+                </div>
+
+              </div>
+        </div>
+        </div>
 </div>
+<section class="card-area pb-5">
+   <div class="container">
+      <div class="row justify-content-center">
+         <div class="col-lg-4 col-md-7 col-sm-9">
+            <div class="single-card card-style-one">
+               <div class="card-image h-25">
+                  <img src="https://images.unsplash.com/photo-1612277795259-607df5c06e6d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8UGF0aWVudHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" alt="Image" />
+               </div>
+               <div class="card-content">
+                  <h4 class="card-title">
+                     <a href="{{ path('list_patients') }}">Patient list</a>
+                  </h4>
+                  <p class="text">
+                     Check Patients list
+                  </p>
+               </div>
+            </div>
+            <!-- single-card -->
+         </div>
+         <!-- col -->
+         <div class="col-lg-4 col-md-7 col-sm-9">
+            <div class="single-card card-style-one">
+               <div class="card-image">
+                  <img src="https://media.istockphoto.com/id/1390886687/fr/photo/contr%C3%B4le-de-la-pression-art%C3%A9rielle-%C3%A0-la-maison.jpg?b=1&s=170667a&w=0&k=20&c=Gtv-0k5Rdbh9Fq1hOgbItqDmbiZ1XrXd5MJJR6VkzMU=" alt="Image" />
+               </div>
+               <div class="card-content">
+                  <h4 class="card-title">
+                     <a href="{{ path('list_consultations') }}">Listes des consultations</a>
+                  </h4>
+                  <p class="text">
+                     List des consultations
+                  </p>
+               </div>
+            </div>
+            <!-- single-card -->
+         </div>
+      </div>
+      <!-- row -->
+   </div>
+   <!-- container -->
+</section>
 {% endblock %}

@@ -28,6 +28,7 @@ class ConsultationForm extends AbstractType
                     'multiple'=>false,
                     'expanded'=>false])
             ->add('dateConsultation', TextType::class)
+            ->add('description', TextType::class)
         ;
     }
 

@@ -20,6 +20,9 @@ class Patient
     #[ORM\Column(length: 255)]
     private ?string $email = null;
 
+    #[ORM\Column(length: 255)]
+    private ?string $address = null;
+
     #[ORM\Column(nullable: true)]
     private ?int $age = null;
 
@@ -53,6 +56,18 @@ class Patient
     public function setName(string $name): self
     {
         $this->name = $name;
+
+        return $this;
+    }
+
+    public function getAddress(): ?string
+    {
+        return $this->address;
+    }
+
+    public function setAddress(string $address): self
+    {
+        $this->address = $address;
 
         return $this;
     }

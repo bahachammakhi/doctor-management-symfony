@@ -24,6 +24,7 @@
                     <td>{{ o.Medicament}}</td>
                     <td>{{ o.description}}</td>
                     <td>{{ o.consultation.dateConsultation}}</td>
+
                     <td>{{ o.consultation.patient.name }}</td>
                     <td><a href="{{ path("update-ordonnance", {'id': o.id}) }}">Update</a></td>
                     <td><a href="{{ path("delete-ordonnance", {'id': o.id}) }}">Delete</a></td>

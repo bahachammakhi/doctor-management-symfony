@@ -17,6 +17,9 @@ class Consultation
     #[ORM\Column(length: 255)]
     public ?string $dateConsultation = null;
 
+    #[ORM\Column(length: 255)]
+    public ?string $description = null;
+
     #[ORM\ManyToOne(targetEntity: Patient::class, inversedBy: 'consultations')]
     #[ORM\JoinColumn(nullable: false)]
     private $patient;

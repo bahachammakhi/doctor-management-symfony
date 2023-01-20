@@ -21,6 +21,19 @@ class ConsultationController extends AbstractController
         ]);
     }
 
+    #[Route('/consultation/consultation/{id}', name: 'view_consultation')]
+    public function viewConsultation(ManagerRegistry $doctrine, $id): Response
+    {
+        $em= $doctrine->getManager();
+        $consultation = $em->getRepository("App\Entity\Consultation")->find($id);
+        $ordonance = $em->getRepository("App\Entity\Ordonnance")->findBy(['consultation' => $consultation->getId()]);
+
+        return $this->render('consultation/viewConsultation.html.twig', [
+            "consultation"=>$consultation,
+            "ordonnance"=>$ordonance
+        ]);
+    }
+
     #[Route('/consultation/consultations', name: 'list_consultations')]
     public function listConsultations(ManagerRegistry $doctrine): Response
     {

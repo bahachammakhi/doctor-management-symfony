@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Consultation{% endblock %}
+
+{% block body %}
+    <div class="m-4">
+    <div>
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">Consultation {{consultation.id}}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">{{consultation.dateConsultation}}</h6>
+    <h5>Reason:</h5>
+    <p class="card-text">{{consultation.description}}</p>
+    <a href="{{ path("view_patient", {'id': consultation.patient.id}) }}" class="card-link">Patient:{{consultation.patient.name}}</a>
+    {# <a href="{{ path("update-doctor", {'id': consultation.doctor.id}) }}" class="card-link">Doctor: {{consultation.doctor.name}}</a> #}
+  </div>
+</div>
+
+    </div>
+
+     {% if not ordonnance %}
+<a href="{{ path("add-ordonnance", {'id': consultation.id}) }}" class="btn btn-primary mt-3">Ajout ordonance</a>
+      {% endif %}
+
+      {% if ordonnance %}
+      {%  for o in ordonnance %}
+<div>
+
+<h3 class="mt-2">Ordonnance:</h3>
+
+<div class="alert alert-primary" role="alert">
+  Medicament: {{o.Medicament}}
+</div>
+<div class="alert alert-dark" role="alert">
+  Description:  {{o.description}}
+</div>
+ <div class="d-flex justify-content-center mb-2">
+              <a href="{{ path("update-ordonnance", {'id': o.id}) }}" class="btn btn-primary">Mise a jour ordonance</a>
+
+            </div>
+</div>
+  {% endfor %}
+    </div>
+      {% endif %}
+{% endblock %}

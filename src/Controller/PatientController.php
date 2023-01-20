@@ -15,12 +15,42 @@ use Symfony\Component\Routing\Annotation\Route;
 class PatientController extends AbstractController
 {
 
-
-    #[Route('/', name: 'app_patient')]
-    public function index(): Response
+    #[Route('/home', name: 'app_patient')]
+    public function index(ManagerRegistry $doctrine): Response
     {
+        $em= $doctrine->getManager();
+        $patientsNumber = $em->getRepository("App\Entity\Patient")->createQueryBuilder("a")
+        ->select('count(a.id)')
+        ->getQuery()
+        ->getSingleScalarResult();
+        $consultationsNumber = $em->getRepository("App\Entity\Consultation")->createQueryBuilder("c")
+        ->select('count(c.id)')
+        ->getQuery()
+        ->getSingleScalarResult();
+        $ordonancesNumber = $em->getRepository("App\Entity\Ordonnance")->createQueryBuilder("b")
+        ->select('count(b.id)')
+        ->getQuery()
+        ->getSingleScalarResult();
         return $this->render('patient/index.html.twig', [
             'controller_name' => 'PatientController',
+            "patientsNumber" => $patientsNumber,
+            "consultationsNumber"=>$consultationsNumber,
+            "ordonancesNumber"=>$ordonancesNumber
+        ]);
+    }
+
+
+
+    #[Route('/patient/profile/{id}', name: 'view_patient')]
+    public function patientProfile(ManagerRegistry $doctrine,$id): Response
+    {
+        $em= $doctrine->getManager();
+        $patient = $em->getRepository("App\Entity\Patient")->find($id);
+        $consultations = $em->getRepository("App\Entity\Consultation")->findBy(['patient' => $patient->getId()]);
+
+        return $this->render('patient/patientProfile.html.twig', [
+            "patient"=>$patient,
+            "consultationList"=>$consultations
         ]);
     }
 

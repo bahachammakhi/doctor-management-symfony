@@ -11,6 +11,8 @@
         <td class="table-primary">Name</td>
         <td class="table-primary">email</td>
         <td class="table-primary">age</td>
+        <td class="table-primary">View</td>
+
         <td class="table-primary">Update</td>
         <td class="table-primary">Delete</td>
     </tr>
@@ -20,6 +22,7 @@
             <td>{{ p.name}}</td>
             <td>{{ p.email }}</td>
             <td>{{ p.age }}</td>
+                 <td><a href="{{ path("view_patient", {'id': p.id}) }}">View</a></td>
             <td><a href="{{ path("update-patient", {'id': p.id}) }}">Update</a></td>
             <td><a href="{{ path("delete-patient", {'id': p.id}) }}">Delete</a></td>
         </tr>
