@@ -23,6 +23,7 @@ class PatientForm extends AbstractType
             ->add('age', TextType::class)
             ->add('phone', TextType::class)
             ->add('genre', TextType::class)
+            ->add('address', TextType::class)
         ->add('doctor', EntityType::class,
         ['class'=>'App\Entity\User',
             'choice_label'=>'name',
